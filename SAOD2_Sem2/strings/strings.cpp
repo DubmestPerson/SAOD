@@ -10,8 +10,10 @@ void string_copy(char* d, char* s) {
 }
 int len(const char* s) {
     int i = 0;
-    while (*s++ != 0)
+    while (*s != 0) {
+        s++;
         i++;
+    }
     return i;
 }
 
@@ -23,6 +25,9 @@ int compare(const char* s, const char* t) {
         }
         s++;
         t++;
+    }
+    if (*s != *t) {
+        return *s - *t;
     }
     return 0;
 }
